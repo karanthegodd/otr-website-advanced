@@ -12,6 +12,11 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'OTR Racing',
   description: 'Formula Student Team',
+  icons: {
+    icon: [],
+    apple: [],
+    shortcut: []
+  }
 };
 
 export default function RootLayout({
@@ -21,6 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="data:," />
+      </head>
       <body className={inter.className}>
         <AudioProvider>
           <TransitionProvider>
