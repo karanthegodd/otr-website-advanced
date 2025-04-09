@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,15 +41,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/images/OTR-logo-updated.PNG"
-                alt="OTR Logo"
-                width={120}
-                height={40}
-                className="object-contain"
-                priority
-              />
+            <Link 
+              href="/" 
+              className="text-2xl font-bold text-white hover:text-[#FF6B00] transition-colors duration-200"
+            >
+              OTR
             </Link>
           </div>
 
