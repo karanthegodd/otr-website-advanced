@@ -1,14 +1,13 @@
+'use client';
+
 import React from 'react';
-import Navbar from '@/components/Navbar';
+import PageLayout from '@/components/layout/PageLayout';
 import Car from '@/components/Car';
-import Footer from '@/components/Footer';
 
 export default function CarPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <Navbar />
+    <PageLayout>
       <Car />
-      <Footer />
-    </main>
+    </PageLayout>
   );
 } 

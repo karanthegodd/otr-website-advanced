@@ -1,14 +1,13 @@
+'use client';
+
 import React from 'react';
-import Navbar from '@/components/Navbar';
+import PageLayout from '@/components/layout/PageLayout';
 import Team from '@/components/Team';
-import Footer from '@/components/Footer';
 
 export default function TeamPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <Navbar />
+    <PageLayout>
       <Team />
-      <Footer />
-    </main>
+    </PageLayout>
   );
 } 

@@ -2,18 +2,13 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import PageLayout from '@/components/layout/PageLayout';
 import AnimatedSection from '@/components/animations/AnimatedSection';
 import KineticText from '@/components/animations/KineticText';
-import AmbientBackground from '@/components/animations/AmbientBackground';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <AmbientBackground />
-      <Navbar />
-      
+    <PageLayout>
       {/* Hero Section */}
       <AnimatedSection 
         className="min-h-screen flex items-center justify-center relative"
@@ -66,9 +61,7 @@ export default function Home() {
           </div>
         </div>
       </AnimatedSection>
-
-      <Footer />
-    </main>
+    </PageLayout>
   );
 }
 

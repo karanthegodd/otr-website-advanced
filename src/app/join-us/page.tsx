@@ -1,13 +1,13 @@
-import Navbar from '@/components/Navbar';
+'use client';
+
+import React from 'react';
+import PageLayout from '@/components/layout/PageLayout';
 import JoinUs from '@/components/JoinUs';
-import Footer from '@/components/Footer';
 
 export default function JoinUsPage() {
   return (
-    <main className="bg-black text-white">
-      <Navbar />
+    <PageLayout>
       <JoinUs />
-      <Footer />
-    </main>
+    </PageLayout>
   );
 } 
