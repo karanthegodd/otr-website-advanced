@@ -12,11 +12,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'OTR Racing',
   description: 'Formula Student Team',
-  icons: {
-    icon: [],
-    apple: [],
-    shortcut: []
-  }
+  icons: null
 };
 
 export default function RootLayout({
@@ -27,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="data:," />
+        <link rel="icon" href="data:image/x-icon;base64,AA" />
+        <link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;base64,AA" />
+        <link rel="apple-touch-icon" href="data:image/x-icon;base64,AA" />
       </head>
       <body className={inter.className}>
         <AudioProvider>
