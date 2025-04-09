@@ -19,7 +19,6 @@ module.exports = {
       },
       animation: {
         'gradient-x': 'gradient-x 3s ease infinite',
-        'smoke': 'smoke 3s ease-in-out infinite',
       },
       keyframes: {
         'gradient-x': {
@@ -30,16 +29,6 @@ module.exports = {
           '50%': {
             'background-size': '200% 200%',
             'background-position': 'right center',
-          },
-        },
-        'smoke': {
-          '0%, 100%': {
-            'opacity': '0',
-            'transform': 'translateY(0)',
-          },
-          '50%': {
-            'opacity': '0.3',
-            'transform': 'translateY(-10px)',
           },
         },
       },

@@ -3,13 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
+  --foreground-rgb: 0, 119, 202;  /* #0077CA */
   --background-rgb: 0, 0, 0;
+  --heading-rgb: 0, 156, 222;  /* #009CDE */
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: rgb(var(--heading-rgb));
+}
+
+a {
+  color: rgb(var(--heading-rgb));
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: rgb(var(--foreground-rgb));
 }
 
 @layer utilities {
