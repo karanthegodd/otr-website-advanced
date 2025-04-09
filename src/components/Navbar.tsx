@@ -21,6 +21,15 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
+
   const links = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
@@ -37,13 +46,13 @@ export default function Navbar() {
         isScrolled ? 'bg-black/90 backdrop-blur-sm py-2' : 'bg-transparent py-4'
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link 
               href="/" 
-              className="text-2xl font-bold text-white hover:text-[#FF6B00] transition-colors duration-200"
+              className="text-xl md:text-2xl font-bold text-white hover:text-[#FF6B00] transition-colors duration-200"
             >
               OTR
             </Link>
@@ -55,7 +64,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-300 hover:text-white transition-colors duration-200"
+                className="text-gray-300 hover:text-[#FF6B00] transition-colors duration-200 text-sm font-medium"
               >
                 {link.label}
               </Link>
@@ -64,8 +73,9 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors duration-200 text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             <svg
               className="w-6 h-6"
@@ -97,22 +107,41 @@ export default function Navbar() {
           initial={false}
           animate={isMobileMenuOpen ? 'open' : 'closed'}
           variants={{
-            open: { opacity: 1, height: 'auto' },
-            closed: { opacity: 0, height: 0 },
+            open: { 
+              opacity: 1, 
+              height: 'auto',
+              transition: {
+                type: 'spring',
+                stiffness: 300,
+                damping: 30
+              }
+            },
+            closed: { 
+              opacity: 0, 
+              height: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 300,
+                damping: 30
+              }
+            },
           }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden"
+          className="md:hidden fixed inset-x-0 top-[60px] bg-black/95 backdrop-blur-lg"
         >
-          <div className="py-4 space-y-4">
+          <div className="py-4 px-4 space-y-1 max-h-[calc(100vh-80px)] overflow-y-auto">
             {links.map((link) => (
-              <Link
+              <motion.div
                 key={link.href}
-                href={link.href}
-                className="block text-gray-300 hover:text-white transition-colors duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
+                whileTap={{ scale: 0.95 }}
               >
-                {link.label}
-              </Link>
+                <Link
+                  href={link.href}
+                  className="block w-full py-3 px-4 text-base font-medium text-gray-300 hover:text-[#FF6B00] hover:bg-white/5 rounded-lg transition-colors duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </motion.div>
             ))}
           </div>
         </motion.div>
