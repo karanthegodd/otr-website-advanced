@@ -5,15 +5,17 @@ import Image from 'next/image';
 import PageLayout from '@/components/layout/PageLayout';
 import AnimatedSection from '@/components/animations/AnimatedSection';
 import KineticText from '@/components/animations/KineticText';
+import SmokeAnimation from '@/components/animations/SmokeAnimation';
 
 export default function Home() {
   return (
     <PageLayout>
       {/* Hero Section */}
       <AnimatedSection 
-        className="min-h-screen flex items-center justify-center relative"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden"
         withSpeedStreak
       >
+        <SmokeAnimation />
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/home/homepage.png"
@@ -26,7 +28,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 py-20 text-center relative z-10">
           <KineticText
             text="ONTARIO TECH RACING"
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-[#FF6B00] to-white"
           />
           <KineticText
             text="Engineering Excellence in Motion"
