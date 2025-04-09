@@ -68,7 +68,6 @@ export default function Car() {
   const [isAudioReady, setIsAudioReady] = useState(false);
   const { hasUserInteracted } = useAudio();
   const [hasPlayedSound, setHasPlayedSound] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   // Initialize audio
   useEffect(() => {
@@ -92,30 +91,25 @@ export default function Car() {
     };
   }, []);
 
-  // Handle play/pause
-  const toggleSound = () => {
-    if (!audioRef.current) return;
-
-    if (isPlaying) {
-      audioRef.current.pause();
-      setIsPlaying(false);
-    } else {
+  // Play sound when component mounts and user has interacted
+  useEffect(() => {
+    if (isAudioReady && hasUserInteracted && !hasPlayedSound && audioRef.current) {
+      console.log('Playing car sound on page load');
       audioRef.current.currentTime = 0;
+      
       const playPromise = audioRef.current.play();
       if (playPromise !== undefined) {
         playPromise
           .then(() => {
             console.log('Car sound played successfully');
-            setIsPlaying(true);
             setHasPlayedSound(true);
           })
           .catch(error => {
             console.error('Error playing car sound:', error);
-            setIsPlaying(false);
           });
       }
     }
-  };
+  }, [isAudioReady, hasUserInteracted, hasPlayedSound]);
 
   return (
     <section className="relative min-h-screen bg-[#003C71] text-white py-16 px-4 md:px-8 overflow-hidden">
@@ -134,26 +128,9 @@ export default function Car() {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-[#FF6B00] to-white bg-clip-text text-transparent animate-gradient-x">
             OTR-23 Formula SAE Car
           </h1>
-          <p className="text-lg md:text-xl text-[#97999B] mb-4">
+          <p className="text-lg md:text-xl text-[#97999B]">
             Engineering excellence in motion
           </p>
-          {hasUserInteracted && isAudioReady && (
-            <button
-              onClick={toggleSound}
-              className="px-6 py-2 bg-[#FF6B00] text-white rounded-full hover:bg-[#FF6B00]/80 transition-colors flex items-center justify-center mx-auto space-x-2"
-            >
-              <span>{isPlaying ? 'Pause Engine Sound' : 'Play Engine Sound'}</span>
-              {isPlaying ? (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
-                </svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                </svg>
-              )}
-            </button>
-          )}
         </motion.div>
 
         {/* Car Images */}
