@@ -54,7 +54,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-bold mb-6 text-[#009CDE]"
+          className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-500 via-blue-500 to-white bg-clip-text text-transparent"
         >
           Ontario Tech Racing
         </motion.h1>
@@ -62,7 +62,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-xl md:text-2xl text-[#0077CA] mb-8 max-w-3xl mx-auto"
+          className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
         >
           Pushing the boundaries of student motorsport engineering and innovation
         </motion.p>
@@ -74,7 +74,7 @@ export default function Hero() {
           <a
             href="/join-us"
             onClick={handleClick}
-            className="inline-block bg-[#009CDE] hover:bg-[#0077CA] text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-200"
+            className="inline-block bg-gradient-to-r from-orange-500 to-blue-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:from-orange-600 hover:to-blue-600 transition-all duration-300"
           >
             Join Our Team
           </a>
