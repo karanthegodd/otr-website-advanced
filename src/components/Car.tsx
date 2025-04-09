@@ -133,6 +133,29 @@ export default function Car() {
           </p>
         </motion.div>
 
+        {/* Car Images */}
+        <div className="mb-8">
+          <motion.div
+            initial={{ opacity: 0, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="relative h-[300px] md:h-[600px] rounded-lg overflow-hidden bg-gradient-to-br from-[#003C71] to-black group"
+          >
+            <Image
+              src="/images/car/car-top.png"
+              alt="Car Top View"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+              style={{ objectFit: 'contain' }}
+              className="p-4 transition-transform duration-300 group-hover:scale-105"
+              onError={(e) => {
+                console.error('Error loading image:', e);
+              }}
+            />
+          </motion.div>
+        </div>
+
         {/* Key Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-8 px-2">
           {features.map((feature, index) => (
