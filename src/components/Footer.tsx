@@ -54,8 +54,8 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-xl font-bold mb-4">About OTR</h3>
-            <p className="text-gray-400 mb-4">
+            <h3 className="text-xl font-bold mb-4 text-[#009CDE]">About OTR</h3>
+            <p className="text-[#0077CA] mb-4">
               Ontario Tech Racing is a student-led Formula SAE team dedicated to innovation 
               and excellence in automotive engineering.
             </p>
@@ -66,7 +66,7 @@ export default function Footer() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-ot-blue hover:text-ot-blue-light transition-colors duration-200"
+                  className="text-[#009CDE] hover:text-[#0077CA] transition-colors duration-200"
                 >
                   {link.icon}
                 </a>
@@ -81,13 +81,13 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+            <h3 className="text-xl font-bold mb-4 text-[#009CDE]">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-ot-blue hover:text-ot-blue-light transition-colors duration-200"
+                    className="text-[#0077CA] hover:text-[#009CDE] transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -103,14 +103,14 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="text-xl font-bold mb-4">Contact</h3>
-            <address className="text-gray-400 not-italic">
+            <h3 className="text-xl font-bold mb-4 text-[#009CDE]">Contact</h3>
+            <address className="text-[#0077CA] not-italic">
               <p>Ontario Tech University</p>
               <p>2000 Simcoe Street North</p>
               <p>Oshawa, ON L1G 0C5</p>
               <a
                 href="mailto:otr@ontariotechu.ca"
-                className="text-ot-blue hover:text-ot-blue-light transition-colors duration-200"
+                className="text-[#0077CA] hover:text-[#009CDE] transition-colors duration-200"
               >
                 otr@ontariotechu.ca
               </a>
@@ -124,19 +124,19 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h3 className="text-xl font-bold mb-4">Newsletter</h3>
-            <p className="text-gray-400 mb-4">
+            <h3 className="text-xl font-bold mb-4 text-[#009CDE]">Newsletter</h3>
+            <p className="text-[#0077CA] mb-4">
               Subscribe to our newsletter for updates and news about our team.
             </p>
             <form className="flex flex-col space-y-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-ot-blue"
+                className="px-4 py-2 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#009CDE]"
               />
               <button
                 type="submit"
-                className="bg-ot-blue hover:bg-ot-blue-light text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+                className="bg-[#009CDE] hover:bg-[#0077CA] text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
               >
                 Subscribe
               </button>
@@ -145,7 +145,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <div className="border-t border-gray-900 mt-12 pt-8 text-center text-[#0077CA]">
           <p>&copy; {new Date().getFullYear()} Ontario Tech Racing. All rights reserved.</p>
         </div>
       </div>
