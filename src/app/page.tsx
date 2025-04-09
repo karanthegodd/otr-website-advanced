@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AnimatedSection from '@/components/animations/AnimatedSection';
@@ -15,10 +16,19 @@ export default function Home() {
       
       {/* Hero Section */}
       <AnimatedSection 
-        className="min-h-screen flex items-center justify-center"
+        className="min-h-screen flex items-center justify-center relative"
         withSpeedStreak
       >
-        <div className="max-w-7xl mx-auto px-4 py-20 text-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/home/homepage.png"
+            alt="OTR Racing Car"
+            fill
+            className="object-cover opacity-50"
+            priority
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 py-20 text-center relative z-10">
           <KineticText
             text="ONTARIO TECH RACING"
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
