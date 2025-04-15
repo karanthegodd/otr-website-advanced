@@ -86,6 +86,10 @@
   ],
   "contact": {
     "email": "team@ontariotechracing.com",
-    "website": "otr-website-advanced.vercel.app"
+    "website": "otr-website-advanced.vercel.app",
+    "social": {
+      "linkedin": "https://www.linkedin.com/company/ontariotechracing/",
+      "instagram": "https://www.instagram.com/ontariotechracing/"
+    }
   }
 }
