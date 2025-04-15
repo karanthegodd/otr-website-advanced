@@ -2,45 +2,27 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import SmokeEffect from '@/components/animations/SmokeEffect';
+import Navbar from '../Navbar';
+import Footer from '../Footer';
 
 interface PageLayoutProps {
   children: React.ReactNode;
 }
 
-const PageLayout = ({ children }: PageLayoutProps) => {
+export default function PageLayout({ children }: PageLayoutProps) {
   return (
-    <div className="min-h-screen bg-black text-white relative">
-      <SmokeEffect />
-      
-      {/* Lighting effect */}
-      <motion.div
-        className="fixed inset-0 z-0"
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: [0.3, 0.5, 0.3],
-          background: [
-            'radial-gradient(circle at 50% 50%, rgba(255,107,0,0.1) 0%, transparent 50%)',
-            'radial-gradient(circle at 50% 50%, rgba(120,119,198,0.2) 0%, transparent 50%)',
-            'radial-gradient(circle at 50% 50%, rgba(255,107,0,0.1) 0%, transparent 50%)',
-          ],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-
+    <div className="min-h-screen bg-black text-white">
       <Navbar />
-      <main className="relative z-10">
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="relative z-10"
+      >
         {children}
-      </main>
+      </motion.main>
       <Footer />
     </div>
   );
-};
-
-export default PageLayout; 
+} 

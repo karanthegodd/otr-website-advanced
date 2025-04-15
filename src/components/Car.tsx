@@ -113,10 +113,7 @@ export default function Car() {
 
   return (
     <section className="relative min-h-screen bg-[#003C71] text-white py-8 px-4 overflow-hidden">
-      {/* Smoke effect background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#003C71]/50 to-[#003C71] animate-smoke"></div>
-      </div>
+      {/* Removed smoke effect background */}
 
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -128,7 +125,7 @@ export default function Car() {
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-[#FF6B00] to-white bg-clip-text text-transparent animate-gradient-x px-2">
             OTR-23 Formula SAE Car
           </h1>
-          <p className="text-base md:text-lg lg:text-xl text-[#97999B] px-2">
+          <p className="text-base md:text-lg lg:text-xl text-white px-2">
             Engineering excellence in motion
           </p>
         </motion.div>

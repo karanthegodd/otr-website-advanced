@@ -4,11 +4,12 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('/');
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +36,7 @@ export default function Navbar() {
   const links = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
+    { href: '/project', label: 'Project' },
     { href: '/team', label: 'Team' },
     { href: '/car', label: 'Car' },
     { href: '/sponsors', label: 'Sponsors' },
@@ -82,24 +84,13 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 py-2 px-1"
-                  onMouseEnter={() => setActiveLink(link.href)}
-                  onMouseLeave={() => setActiveLink('/')}
+                  className={`text-xl font-medium transition-colors duration-200 py-2 ${
+                    pathname === link.href 
+                      ? 'text-white border-b-2 border-[#FF6B00]' 
+                      : 'text-gray-300 hover:text-white'
+                  }`}
                 >
                   {link.label}
-                  {activeLink === link.href && (
-                    <motion.div
-                      layoutId="underline"
-                      className="absolute left-0 right-0 h-0.5 bg-[#FF6B00]"
-                      style={{ bottom: -2 }}
-                      initial={false}
-                      transition={{
-                        type: "spring",
-                        stiffness: 500,
-                        damping: 30
-                      }}
-                    />
-                  )}
                 </Link>
               </motion.div>
             ))}
@@ -147,7 +138,7 @@ export default function Navbar() {
               transition={{
                 type: "spring",
                 stiffness: 400,
-                damping: 40
+                damping: 30
               }}
               className="md:hidden fixed inset-x-0 top-[60px] bg-black/95 backdrop-blur-lg border-t border-white/10"
             >
@@ -165,7 +156,11 @@ export default function Navbar() {
                   >
                     <Link
                       href={link.href}
-                      className="block w-full py-3 px-4 text-base font-medium text-gray-300 hover:text-[#FF6B00] hover:bg-white/5 rounded-lg transition-all duration-200"
+                      className={`block w-full py-3 px-4 text-base font-medium rounded-lg transition-all duration-200 ${
+                        pathname === link.href 
+                          ? 'bg-white/10 text-white border-l-2 border-[#FF6B00]' 
+                          : 'text-gray-300 hover:text-white hover:bg-white/5'
+                      }`}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.label}
