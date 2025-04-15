@@ -11,5 +11,81 @@
     "rootDirectory": null,
     "directoryListing": false,
     "nodeVersion": "22.x"
+  },
+  "projectName": "Ontario Tech Racing - Electric Vehicle Project",
+  "version": "2024",
+  "description": "High-performance electric race car for Formula SAE competitions",
+  "status": "Active Development",
+  "timeline": {
+    "designPhase": {
+      "period": "September - December",
+      "activities": [
+        "Initial concept development",
+        "CAD modeling",
+        "Simulation and analysis"
+      ]
+    },
+    "manufacturing": {
+      "period": "January - March",
+      "activities": [
+        "Component fabrication",
+        "Vehicle assembly",
+        "Integration testing"
+      ]
+    },
+    "testing": {
+      "period": "April - May",
+      "activities": [
+        "Vehicle testing",
+        "Performance optimization",
+        "Driver training"
+      ]
+    },
+    "competition": {
+      "period": "June - July",
+      "activities": [
+        "Formula SAE Electric competition",
+        "Technical inspections",
+        "Dynamic events"
+      ]
+    }
+  },
+  "technicalSpecs": {
+    "powertrain": {
+      "peakPower": "80kW",
+      "systemVoltage": "400V",
+      "features": [
+        "Custom Battery Pack Design",
+        "Advanced Cooling System",
+        "Regenerative Braking"
+      ]
+    },
+    "aerodynamics": {
+      "features": [
+        "Full Aero Package",
+        "CFD Optimized Design",
+        "Active DRS System",
+        "Ground Effect Optimization"
+      ]
+    },
+    "electronics": {
+      "features": [
+        "Custom ECU",
+        "Real-time Telemetry System",
+        "Traction Control",
+        "Data Acquisition System"
+      ]
+    }
+  },
+  "teams": [
+    "Powertrain Team",
+    "Aerodynamics Team",
+    "Electronics Team",
+    "Chassis Team",
+    "Business Team"
+  ],
+  "contact": {
+    "email": "team@ontariotechracing.com",
+    "website": "otr-website-advanced.vercel.app"
   }
 }

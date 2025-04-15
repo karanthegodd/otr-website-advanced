@@ -1,42 +1,90 @@
-# OTR Website Deployment Files
+# Ontario Tech Racing - Electric Vehicle Project
 
-This directory contains the necessary files for deploying the OTR website to Vercel.
+[![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://otr-website-advanced.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
 
-## Contents
+## 🏎️ Project Overview
+Our team is dedicated to designing and building high-performance electric race cars that compete in Formula SAE competitions worldwide. We're pushing the boundaries of electric vehicle technology while providing hands-on engineering experience to students.
 
-- `.vercel/` - Contains Vercel deployment configuration and environment variables
-- `package.json` - Project dependencies and scripts
-- `next.config.js` - Next.js configuration
-- `tsconfig.json` - TypeScript configuration
-- `tailwind.config.js` - Tailwind CSS configuration
-- `postcss.config.js` - PostCSS configuration
+## 🚀 Key Features
+- ⚡ Advanced Electric Powertrain (80kW Peak Power)
+- 🌪️ Custom Aerodynamic Package with Active DRS
+- 🏁 Carbon Fiber Monocoque Design
+- 📊 Full Telemetry System with Real-time Data
 
-## Deployment Instructions
+## 📅 Project Timeline
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+### 1. Design Phase (September - December)
+- Comprehensive CAD modeling
+- FEA and CFD analysis
+- System architecture design
+- Component selection and validation
 
-2. Build the project:
-   ```bash
-   npm run build
-   ```
+### 2. Manufacturing (January - March)
+- Carbon fiber layup process
+- Powertrain assembly
+- Electronics integration
+- Quality control testing
 
-3. Deploy to Vercel:
-   ```bash
-   vercel deploy --prod
-   ```
+### 3. Testing (April - May)
+- Dynamic vehicle testing
+- Performance data collection
+- Driver training program
+- System optimization
 
-## Environment Variables
+### 4. Competition (June - July)
+- Technical documentation
+- Safety inspections
+- Dynamic events
+- Endurance testing
 
-The following environment variables are required for deployment:
+## 🔧 Technical Specifications
 
-- `VERCEL_OIDC_TOKEN` - Vercel OIDC token for authentication
-- Additional environment variables can be configured in the Vercel dashboard
+### Powertrain
+- 80kW Peak Power Output
+- 400V High-voltage System
+- Custom Battery Management
+- Advanced Thermal Management
 
-## Notes
+### Aerodynamics
+- Full Aero Package with CFD Optimization
+- Active DRS System
+- Ground Effect Enhancement
+- Low Drag Configuration
 
-- Make sure to update the environment variables in the Vercel dashboard before deployment
-- The deployment uses Next.js 14 with TypeScript and Tailwind CSS
-- The project is configured for production deployment 
+### Electronics
+- Custom ECU Development
+- Real-time Telemetry
+- Advanced Traction Control
+- Comprehensive Data Acquisition
+
+## 👥 Team Structure
+- Powertrain Development
+- Aerodynamics Research
+- Electronics Integration
+- Chassis Design
+- Business Operations
+
+## 📱 Contact & Social
+- Website: [otr-website-advanced.vercel.app](https://otr-website-advanced.vercel.app)
+- Email: team@ontariotechracing.com
+- Instagram: [@ontariotechracing](https://instagram.com/ontariotechracing)
+
+## 🛠️ Development Setup
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Deploy to Vercel
+vercel deploy --prod
+```
+
+## 📊 Project Status
+Currently in active development for the upcoming Formula SAE Electric competition. Follow our progress on our website! 
